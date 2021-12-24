@@ -1,10 +1,12 @@
 function reverse(str) {
+
     var reverseStr = str.split("").reverse().join();
     return reverseStr;
 }
 
 
-function isPalindrome(str) {
+function isPalindrome(str)
+ {
     var reek = reverse(str);
     if (reek === str)
         console.log("yes");
