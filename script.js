@@ -3,6 +3,7 @@ function reverse(str) {
     return reverseStr;
 }
 
+
 function isPalindrome(str) {
     var reek = reverse(str);
     if (reek === str)
@@ -10,6 +11,7 @@ function isPalindrome(str) {
     else
         console.log("No")
 }
+
 // isPalindrome("jayesh")
 
 function convertDateToStr(date) {
@@ -19,6 +21,7 @@ function convertDateToStr(date) {
         month: "",
         year: ""
     };
+
 
     if (date.day < 10) {
         dateStr.day = "0" + date.day;
@@ -36,13 +39,30 @@ function convertDateToStr(date) {
 
     return dateStr;
 
-
-
 }
 date = {
-    day:  2,
+    day: 2,
     month: 23,
     year: 2020
 
 }
-console.log(convertDateToStr(date));
+// console.log(convertDateToStr(date));
+function getAllDateFormat(date) {
+
+    var dateStr = convertDateToStr(date);
+
+    var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
+    var mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
+    var yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
+    var ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2);
+    var mmddyy = dateStr.month + dateStr.day + dateStr.year.slice(-2);
+    var yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
+
+    return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
+}
+
+// console.log(getAllDateFormat(date));
+
+function checkPalindromeForAllDate(date){
+
+}
