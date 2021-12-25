@@ -9,9 +9,9 @@ function isPalindrome(str)
  {
     var reek = reverse(str);
     if (reek === str)
-        console.log("yes");
+       return true;
     else
-        console.log("No")
+        return false;
 }
 
 // isPalindrome("jayesh")
@@ -42,13 +42,9 @@ function convertDateToStr(date) {
     return dateStr;
 
 }
-date = {
-    day: 2,
-    month: 23,
-    year: 2020
 
-}
-// console.log(convertDateToStr(date));
+
+
 function getAllDateFormat(date) {
 
     var dateStr = convertDateToStr(date);
@@ -65,6 +61,27 @@ function getAllDateFormat(date) {
 
 // console.log(getAllDateFormat(date));
 
-function checkPalindromeForAllDate(date){
+function checkPalindromeForAllDateFormat(date){
+
+    var ListOfPalindrome = getAllDateFormat(date);
+    
+    var flag = false;
+    for ( var i = 0; i < ListOfPalindrome.length; i++){
+       
+        if(isPalindrome(ListOfPalindrome[i])){
+            flag = true;
+            break;
+        }
+    }
+
+    return flag;
 
 }
+var date = {
+    day: 2,
+    month: 11,
+    year: 2020
+
+}
+
+console.log(checkPalindromeForAllDateFormat(date));
