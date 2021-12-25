@@ -170,12 +170,12 @@ function clickHandler(){
     };
     var isPalindrome = checkPalindromeForAllDateFormat(date);
     if(isPalindrome){
-        output.innerText = `Yup!!!! Your Birthday is Palindrome 🥳🥳`
+        output.innerText = `Yup!!!! Your Birthday is PALINDROME 🥳🥳`
     }
     else{
         var [ctr , nextday] = checkNextPalindromeDate(date);
 
-        output.innerText = `Your next palindrome date is ${nextday.day}-${nextday.month}-${nextday.year}. You missed it by just ${ctr} days 😔😔`
+        output.innerText = `NO!! Your Birthday is Not Palindrome.Next palindrome date is ${nextday.day}-${nextday.month}-${nextday.year}. You missed it by just ${ctr} days 😔😔`
     }
     // console.log(date);
 
