@@ -1,20 +1,19 @@
 function reverse(str) {
 
-    var reverseStr = str.split("").reverse().join();
+    var reverseStr = str.split("").reverse().join("");
     return reverseStr;
 }
 
 
-function isPalindrome(str)
- {
+function isPalindrome(str) {
     var reek = reverse(str);
     if (reek === str)
-       return true;
+        return true;
     else
         return false;
 }
 
-// isPalindrome("jayesh")
+
 
 function convertDateToStr(date) {
 
@@ -59,16 +58,17 @@ function getAllDateFormat(date) {
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
 }
 
-// console.log(getAllDateFormat(date));
 
-function checkPalindromeForAllDateFormat(date){
+
+function checkPalindromeForAllDateFormat(date) {
 
     var ListOfPalindrome = getAllDateFormat(date);
-    
+
+
     var flag = false;
-    for ( var i = 0; i < ListOfPalindrome.length; i++){
-       
-        if(isPalindrome(ListOfPalindrome[i])){
+    for (var i = 0; i < ListOfPalindrome.length; i++) {
+
+        if (isPalindrome(ListOfPalindrome[i])) {
             flag = true;
             break;
         }
@@ -77,11 +77,70 @@ function checkPalindromeForAllDateFormat(date){
     return flag;
 
 }
-var date = {
-    day: 2,
-    month: 11,
-    year: 2020
+
+
+function isleapYear(year) {
+    if (year % 400 == 0) {
+        return true;
+    } else {
+        if (year % 4 == 0) {
+            return true;
+        } else if (year % 100 != 0) {
+            return false;
+        }
+    }
+    return false;
 
 }
 
-console.log(checkPalindromeForAllDateFormat(date));
+
+
+function NextDate(date) {
+
+    var day = date.day + 1;
+    var month = date.month;
+    var year = date.year;
+
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (month === 2) {
+        if (isleapYear(year)) {
+            if (day > 29) {
+                day = 1;
+                month++;
+            }
+        } else {
+            if (day > 28) {
+                day = 1;
+                month++;
+            }
+        }
+
+    } else {
+        if (day > daysInMonth[month - 1]){
+            day = 1;
+           month++
+        }
+    }
+    if (month > 12) {
+        month = 1;
+        year++;
+    }
+
+
+    return {
+        day: day,
+        month: month,
+        year: year
+    }
+
+}
+var date = {
+    day: 28,
+    month: 2,
+    year: 2021
+
+}
+// console.log(NextDate(date));
+
+// console.log(checkPalindromeForAllDateFormat(date));
