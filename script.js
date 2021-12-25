@@ -1,3 +1,5 @@
+
+
 function reverse(str) {
 
     var reverseStr = str.split("").reverse().join("");
@@ -95,7 +97,7 @@ function isleapYear(year) {
 
 
 
-function NextDate(date) {
+function getNextDate(date) {
 
     var day = date.day + 1;
     var month = date.month;
@@ -135,12 +137,58 @@ function NextDate(date) {
     }
 
 }
-var date = {
-    day: 28,
-    month: 2,
-    year: 2021
+
+
+function checkNextPalindromeDate(date){
+     var nextDate = getNextDate(date);
+     var ctr = 0;
+
+     while(1){
+         ctr ++;
+         var isPalindrome  = checkPalindromeForAllDateFormat(nextDate);
+         if(isPalindrome){
+             break;
+         }
+         else{
+             nextDate = getNextDate(nextDate);
+         }
+
+     }
+      return [ctr , nextDate];
 
 }
+
+function clickHandler(){
+    var birdyStr = inputDate.value;
+    if(birdyStr !== ""){
+        var birdyList = birdyStr.split("-")
+    }
+    var date = {
+        year :Number( birdyList[0]),
+        month :Number( birdyList[1]),
+        day :Number( birdyList[2])
+    };
+    var isPalindrome = checkPalindromeForAllDateFormat(date);
+    if(isPalindrome){
+        output.innerText = `Yup!!!! Your Birthday is Palindrome 🥳🥳`
+    }
+    else{
+        var [ctr , nextday] = checkNextPalindromeDate(date);
+
+        output.innerText = `Your next palindrome date is ${nextday.day}-${nextday.month}-${nextday.year}. You missed it by just ${ctr} days 😔😔`
+    }
+    // console.log(date);
+
+}
+
+
+
+var inputDate = document.querySelector("#dateInput")
+var button = document.querySelector("#button");
+var output   = document.querySelector("#output");
+
+button.addEventListener("click", clickHandler)
+
 // console.log(NextDate(date));
 
 // console.log(checkPalindromeForAllDateFormat(date));
