@@ -175,7 +175,7 @@ function clickHandler(){
     else{
         var [ctr , nextday] = checkNextPalindromeDate(date);
 
-        output.innerText = `NO!! Your Birthday is Not Palindrome.Next palindrome date is ${nextday.day}-${nextday.month}-${nextday.year}. You missed it by just ${ctr} days 😔😔`
+        output.innerText = `NO!! Your Birthday is Not Palindrome.Next palindrome date is ${nextday.day}-${nextday.month}-${nextday.year}. You missed it by ${ctr} days 😔😔`
     }
     // console.log(date);
 

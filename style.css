@@ -1,4 +1,43 @@
+.container{
+    margin:auto;
+    margin-top:30px;
+    text-align: center;
+    padding:20px;
+    width:400px;
+    height:450px;
+    background-color:rgb(224, 213, 196);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+label{
+    display: block;
+    margin-bottom: 20px;
+    font-size: larger;
+    font-family:cursive
+    
+}
 input{
     display: block;
-    margin:15px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding:0.5rem;
+    border-radius: 0.2rem;
+    
+}
+button{
+    border-radius: 0.2rem;
+    margin-bottom: 50px;
+    padding:0.2rem;
+    
+}
+button:hover{
+    margin-top:2px;
+    color:black;
+    background-color:darkgrey;
+}
+#output{
+    color:black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+    
 }
